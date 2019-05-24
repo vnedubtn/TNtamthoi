@@ -533,7 +533,7 @@ doc.text("Ngày sinh: "+ngaysinh, cngang_ngs, cdoc_ngs, 0);
 doc.text("Nơi sinh: "+noisinh, cngang_ns, cdoc_ns, 0);
 doc.text("Học sinh lớp: "+lop, cngang_lop, cdoc_lop, 0);
 doc.text("Năm học: "+namhoc, cngang_nh, cdoc_nh, 0);
-doc.text("Được công nhận tốt nghiệp Trung học cơ sở khoa ngày: "+khoangay, cngang_dcn, cdoc_dcn, 0);
+doc.text("Được công nhận tốt nghiệp Trung học cơ sở khóa ngày: "+khoangay, cngang_dcn, cdoc_dcn, 0);
 doc.setFont("Times");
 doc.setFontType("normal");
 doc.setFontSize(10);
