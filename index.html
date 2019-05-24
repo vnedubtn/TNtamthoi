@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Report Bằng Tốt Nghiệp THCS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+<script   src="./examples/js/jquery/jquery-1.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+
+		<!-- Bootstrap -->
+		<link href="./examples/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Editor CSS -->
+		<link href="./examples/css/editor.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#333;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:160px;overflow:hidden;height:200px;}#forkongithub a{width:160px;position:absolute;top:15px;right:-40px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+		<div class="container">
+
+			<div class="masthead">
+
+				<h1 class="muted">Công cụ chỉnh report bằng tốt nghiệp THCS</h1>
+				<h4>Các thầy/cô vui lòng chọn file excel đúng định dạng trong máy của mình</h4>
+				<h5>(<a target="_blank" href="https://docs.google.com/spreadsheets/d/1aAW_JXGLcqlTv1YzLSBuZcT1SYdAAlIpP7AzV2iBm6g">Xem file mẫu</a>)</h5>
+			</div>
+			<table id="tbl" style="display:none;">
+<thead>
+					<tr>
+						<th>cell1Name</th><th>cell2Name</th><th>cell3Name</th>
+					</tr>
+</thead>
+<tbody>
+					<tr>
+						<td>cell1 row1</td><td>cell2 row1</td><td>cell3 row1</td>
+					</tr>
+					<tr>
+						<td>cell1 row2</td><td>cell2 row2</td><td>cell3 row2</td>
+					</tr>
+					<tr>
+						<td>cell1 row3</td><td>cell2 row3</td><td>cell3 row3</td>
+					</tr>
+					<tr>
+						<td>cell1 row4</td><td>cell2 row4</td><td>cell3 row4</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row-fluid">
+				<div class="span6" style="float: right; height: 650px;width: 50%;" >
+					<div id="preview-pane" style="height: 650px;position:relative; z-index:999"></div>
+				</div>
+				<div>
+
+
+
+    <input id="upload" type=file  name="files[]">
+
+
+
+
+				</div>
+				<div class="span5 no-gutter" style="width: 49%;float:left">
+
+
+				</div>
+
+				<div id="editor" class="bypass" style="width: 49%;"></div>
+
+			   <div class="controls" style="width: 49%;">
+					<div class="pull-right">
+						<!--<a href="#" class="btn btn-primary">Download Your Code</a>-->
+						<!--<a href="#" class="btn btn-primary download-pdf">Download PDF</a>-->
+					</div>
+
+					<label class="checkbox">
+						<input type="checkbox" id="auto-refresh" checked="checked" onclick="return false;"> Auto refresh on changes?
+					</label>
+					<a href="#" class="run-code hide btn btn-success">Run Code</a>
+
+					<div class="alert hide">
+						Auto refresh disabled for this
+					</div>
+
+			   </div>
+
+			</div>
+			<div class="clerfix"></div>
+
+		</div> <!-- /container -->
+
+		<!--<footer>&copy; 2017 James Hall - <a href="https://parall.ax/pages/privacy-policy">Privacy Policy</a></footer>-->
+
+		<!-- Scripts down here -->
+
+		<script   src="./examples/js/jquery/jquery-1.7.1.min.js"></script>
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+            if(jsPDF && jsPDF.version) {
+              $('#dversion').text('Version ' + jsPDF.version);
+            }
+          });
+        </script>
+
+		<!-- Code editor -->
+
+		<script src="./examples/js/ace.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- Scripts in development mode -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+		<script type="text/javascript" src="./dist/jspdf.customfonts.min.js"></script>
+		<script type="text/javascript" src="./dist/default_vfs.js"></script>
+		<script type="text/javascript" src="./dist/times_vfs.js"></script>
+		<script type="text/javascript" src="./dist/timesi_vfs.js"></script>
+		<script type="text/javascript" src="./dist/timesbd_vfs.js"></script>
+		<script src="./dist/jspdf.plugin.autotable.js"></script>
+
+		<!-- <script src="./dist/jspdf.js"></script>
+		<script src="./dist/FileSaver.js"></script>
+		<script src="./dist/jspdf.plugin.table.js"></script> -->
+
+		<script type="text/javascript" src="./examples/js/pdfobject.min.js"></script>
+		<script>
+	var job=null;
+	var dta=null;
+    var ExcelToJSON = function() {
+
+      this.parseExcel = function(file) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          var data = e.target.result;
+          var workbook = XLSX.read(data, {
+            type: 'binary'
+          });
+		  job = workbook.SheetNames.reduce((initial, name) => {
+        const sheet = workbook.Sheets[name];
+        initial[name] = XLSX.utils.sheet_to_json(sheet);
+        return initial;
+      }, {});
+	  //dta = JSON.stringify(job);
+          <!-- workbook.SheetNames.forEach(function(sheetName) { -->
+            <!-- // Here is your object -->
+            <!-- var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]); -->
+            <!-- var json_object = JSON.stringify(XL_row_object); -->
+			<!-- job.push(json_object); -->
+            <!-- console.log(JSON.parse(json_object)); -->
+            <!-- jQuery( '#xlx_json' ).val( json_object ); -->
+
+          <!-- }) -->
+        };
+
+        reader.onerror = function(ex) {
+          console.log(ex);
+        };
+
+        reader.readAsBinaryString(file);
+      };
+  };
+
+  function handleFileSelect(evt) {
+
+    var files = evt.target.files; // FileList object
+    var xl2json = new ExcelToJSON();
+    xl2json.parseExcel(files[0]);
+	jsPDFEditor.init();
+  }
+
+
+
+</script>
+<script>
+
+ document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+    </script>
+
+		<script type="text/javascript" src="./examples/js/editor.js"></script>
+		<script>
+
+
+    </script>
+	</body>
+</html>
