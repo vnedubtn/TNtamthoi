@@ -215,8 +215,15 @@ var jsPDFEditor = function () {
 						var kk=item["KK"];
 						var xl=item["XL TN"];
 						var gc=item["Ghi chú"];
+						
+						if(gc==undefined)
+							gc="";
 						var nv1=item["NV1"];
+						if(nv1==undefined)
+							nv1="";
 						var nv2=item["NV2"];
+						if(nv2==undefined)
+							nv2="";
 						var sovb=item["SỐ VB"];
 						var lop=item["Lớp"];
 
@@ -354,8 +361,8 @@ var jsPDFEditor = function () {
 
 						var k=13;
 
-						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],
-							theme: 'plain',
+						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
+							       theme: 'plain',
 							startY: 200,
 							styles: { // Defaul style
 								lineWidth: 0.01,
@@ -565,8 +572,8 @@ doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký
 
 var k=13;
 
-doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],
-	theme: 'plain',
+doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
+	       theme: 'plain',
 	startY: 200+cong,
 	styles: { // Defaul style
 		lineWidth: 0.01,
