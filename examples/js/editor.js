@@ -83,7 +83,7 @@ var jsPDFEditor = function () {
 			var source = "";
 
 			source += "\n";
-			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2019';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2019';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\n";
+			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2019';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2019';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\nvar cngang_nv2=250;\nvar quyetdinh='Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2006 của Bộ Giáo dục và Đào tạo';\n";
 			// source += "var doc = new jsPDF({unit: \"pt\",orientation: \"p\",lineHeight: 1.2});\n";
 			// source += "\n";
 
@@ -279,7 +279,7 @@ var jsPDFEditor = function () {
 						var cngang_nv1=70;
 						var cdoc_nv1=305+cong;
 
-						var cngang_nv2=250;
+						//var cngang_nv2=250;
 						var cdoc_nv2=305+cong;
 
 						//var cngang_bth=400;
@@ -308,7 +308,7 @@ var jsPDFEditor = function () {
 						doc.text(ubnd, cngang_ubnd, cdoc_ubnd, 0);
 						doc.text("Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam", cngang_chxh, cdoc_chxh, 0);
 						doc.text("Độc lập - Tự do - Hạnh phúc", cngang_dltd, cdoc_dltd, 0);
-						doc.text(truong, cngang_truong, cdoc_truong, 0);
+						doc.text("Trường "+truong, cngang_truong, cdoc_truong, 0);
 						doc.setFont("Times");
 						doc.setFontType("bold");
 						doc.setFontSize(12);
@@ -317,7 +317,7 @@ var jsPDFEditor = function () {
 						doc.setFontType("normal");
 						doc.setFontSize(10);
 						doc.text("Số VB: "+sovb, cngang_vb, cdoc_vb, 0);
-						doc.text("Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2018 của Bộ Giáo dục và Đào tạo", cngang_cc, cdoc_cc, 0);
+						doc.text(quyetdinh, cngang_cc, cdoc_cc, 0);
 						doc.text("Hiệu trưởng trường: "+truong, cngang_ht, cdoc_ht, 0);
 						doc.text("Chứng nhận: "+hoten, cngang_cn, cdoc_cn, 0);
 						doc.text("Giới tính: "+gioitinh, cngang_gt, cdoc_gt, 0);
