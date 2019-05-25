@@ -430,7 +430,7 @@ doc.rect(30, 102, 70, 85, 'S');
 // theme:'grid'
 //   });
 doc.rect(0, 420, 600, 0.5, 'S');
-cong=415;
+cong=410;
 var cngang_ubnd=50;
 var cdoc_ubnd=30+cong;
 
@@ -488,7 +488,7 @@ var cdoc_dtt=290+cong;
 var cngang_nv1=70;
 var cdoc_nv1=305+cong;
 
-var cngang_nv2=250;
+//var cngang_nv2=250;
 var cdoc_nv2=305+cong;
 
 //var cngang_bth=400;
@@ -516,7 +516,8 @@ doc.setFontSize(10);
 doc.text(ubnd, cngang_ubnd, cdoc_ubnd, 0);
 doc.text("Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam", cngang_chxh, cdoc_chxh, 0);
 doc.text("Độc lập - Tự do - Hạnh phúc", cngang_dltd, cdoc_dltd, 0);
-doc.text(truong, cngang_truong, cdoc_truong, 0);
+doc.rect(325, 42+cong, 122, 0.5, 'S');
+doc.text("Trường "+truong, cngang_truong, cdoc_truong, 0);
 doc.setFont("Times");
 doc.setFontType("bold");
 doc.setFontSize(12);
@@ -525,7 +526,7 @@ doc.setFont("Times");
 doc.setFontType("normal");
 doc.setFontSize(10);
 doc.text("Số VB: "+sovb, cngang_vb, cdoc_vb, 0);
-doc.text("Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2018 của Bộ Giáo dục và Đào tạo", cngang_cc, cdoc_cc, 0);
+doc.text(quyetdinh, cngang_cc, cdoc_cc, 0);
 doc.text("Hiệu trưởng trường: "+truong, cngang_ht, cdoc_ht, 0);
 doc.text("Chứng nhận: "+hoten, cngang_cn, cdoc_cn, 0);
 doc.text("Giới tính: "+gioitinh, cngang_gt, cdoc_gt, 0);
