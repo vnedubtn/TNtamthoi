@@ -359,7 +359,7 @@ var jsPDFEditor = function () {
 						doc.text("- Nếu có chi tiết sai, phải báo ngay cho trường THCS biết để điều chỉnh", cngang_ncc, cdoc_ncc, 0);
 						doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký", cngang_gnc, cdoc_gnc, 0);
 
-						var k=13;
+						var k=14;
 
 						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 							       theme: 'plain',
@@ -377,7 +377,7 @@ var jsPDFEditor = function () {
 								cellWidth: 'wrap'
 							},headerStyles: { fontStyle: 'Times',fontSize:7,cellWidth: 'wrap' },didParseCell:(data)=>{
           if(data.section=='head'&&data.row.index==0&&data.column.index==0){
-            data.row.cells[0].colSpan=13;
+            data.row.cells[0].colSpan=14;
             //description above refer to the column of the table on the lastrow
           }
 					if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
@@ -570,7 +570,7 @@ doc.setFontSize(7);
 doc.text("- Nếu có chi tiết sai, phải báo ngay cho trường THCS biết để điều chỉnh", cngang_ncc, cdoc_ncc, 0);
 doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký", cngang_gnc, cdoc_gnc, 0);
 
-var k=13;
+var k=14;
 
 doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 	       theme: 'plain',
@@ -588,7 +588,7 @@ doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học l�
 		cellWidth: 'wrap'
 	},headerStyles: { fontStyle: 'Times',fontSize:7,cellWidth: 'wrap' },didParseCell:(data)=>{
 if(data.section=='head'&&data.row.index==0&&data.column.index==0){
-data.row.cells[0].colSpan=13;
+data.row.cells[0].colSpan=14;
 //description above refer to the column of the table on the lastrow
 }
 if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
