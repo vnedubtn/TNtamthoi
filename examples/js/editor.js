@@ -308,7 +308,8 @@ var jsPDFEditor = function () {
 						doc.text(ubnd, cngang_ubnd, cdoc_ubnd, 0);
 						doc.text("Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam", cngang_chxh, cdoc_chxh, 0);
 						doc.text("Độc lập - Tự do - Hạnh phúc", cngang_dltd, cdoc_dltd, 0);
-						doc.rect(325, 42+cong, 122, 0.5, 'S');
+						doc.setFillColor(0,0,0);
+						doc.rect(325, 42+cong, 122, 0.5, 'F');
 						doc.text("Trường "+truong, cngang_truong, cdoc_truong, 0);
 						doc.setFont("Times");
 						doc.setFontType("bold");
@@ -429,8 +430,10 @@ doc.rect(30, 102, 70, 85, 'S');
 // },
 // theme:'grid'
 //   });
-doc.rect(0, 420, 600, 0.5, 'S');
 cong=410;
+
+doc.rect(0, 420, 600, 0.5, 'S');
+
 var cngang_ubnd=50;
 var cdoc_ubnd=30+cong;
 
@@ -516,7 +519,8 @@ doc.setFontSize(10);
 doc.text(ubnd, cngang_ubnd, cdoc_ubnd, 0);
 doc.text("Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam", cngang_chxh, cdoc_chxh, 0);
 doc.text("Độc lập - Tự do - Hạnh phúc", cngang_dltd, cdoc_dltd, 0);
-doc.rect(325, 42+cong, 122, 0.5, 'S');
+doc.setFillColor(0,0,0);
+doc.rect(325, 42+cong, 122, 0.5, 'F');
 doc.text("Trường "+truong, cngang_truong, cdoc_truong, 0);
 doc.setFont("Times");
 doc.setFontType("bold");
