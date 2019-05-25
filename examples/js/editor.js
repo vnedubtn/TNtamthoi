@@ -308,6 +308,7 @@ var jsPDFEditor = function () {
 						doc.text(ubnd, cngang_ubnd, cdoc_ubnd, 0);
 						doc.text("Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam", cngang_chxh, cdoc_chxh, 0);
 						doc.text("Độc lập - Tự do - Hạnh phúc", cngang_dltd, cdoc_dltd, 0);
+						doc.rect(325, 40+cong, 100, 0.5, 'S');
 						doc.text("Trường "+truong, cngang_truong, cdoc_truong, 0);
 						doc.setFont("Times");
 						doc.setFontType("bold");
