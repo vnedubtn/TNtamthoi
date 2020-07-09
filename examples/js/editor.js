@@ -407,7 +407,7 @@ var jsPDFEditor = function () {
 								cellWidth: 'wrap'
 							},headerStyles: { fontStyle: 'Times',fontSize:7,cellWidth: 'wrap' },didParseCell:(data)=>{
           if(data.section=='head'&&data.row.index==0&&data.column.index==0){
-            data.row.cells[0].colSpan=14;
+            data.row.cells[0].colSpan=13;
             //description above refer to the column of the table on the lastrow
           }
 					if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
@@ -651,7 +651,7 @@ if(tinCot==0){
 		cellWidth: 'wrap'
 	},headerStyles: { fontStyle: 'Times',fontSize:7,cellWidth: 'wrap' },didParseCell:(data)=>{
 if(data.section=='head'&&data.row.index==0&&data.column.index==0){
-data.row.cells[0].colSpan=14;
+data.row.cells[0].colSpan=13;
 //description above refer to the column of the table on the lastrow
 }
 if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
