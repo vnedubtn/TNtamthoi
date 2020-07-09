@@ -83,7 +83,7 @@ var jsPDFEditor = function () {
 			var source = "";
 
 			source += "\n";
-			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2020';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2020';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\nvar cngang_nv2=250;\nvar quyetdinh='Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2006 của Bộ Giáo dục và Đào tạo';\n";
+			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2020';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2020';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\nvar cngang_nv2=250;\nvar quyetdinh='Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2006 của Bộ Giáo dục và Đào tạo';\nvar tinCot=1;\n";
 			// source += "var doc = new jsPDF({unit: \"pt\",orientation: \"p\",lineHeight: 1.2});\n";
 			// source += "\n";
 
@@ -360,7 +360,7 @@ var jsPDFEditor = function () {
 						doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký", cngang_gnc, cdoc_gnc, 0);
 
 						var k=14;
-
+						
 						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 							       theme: 'plain',
 							startY: 200,
@@ -388,6 +388,39 @@ var jsPDFEditor = function () {
 					}
         }
 						});
+						
+						
+						if(tinCot==0){
+							doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
+							       theme: 'plain',
+							startY: 200,
+							styles: { // Defaul style
+								lineWidth: 0.01,
+								lineColor: 0,
+								fillStyle: 'DF',
+								halign: 'center',
+								valign: 'middle',
+								columnWidth: '15',
+								overflow: 'linebreak',
+								font: "Times",
+								fontSize:7,
+								cellWidth: 'wrap'
+							},headerStyles: { fontStyle: 'Times',fontSize:7,cellWidth: 'wrap' },didParseCell:(data)=>{
+          if(data.section=='head'&&data.row.index==0&&data.column.index==0){
+            data.row.cells[0].colSpan=14;
+            //description above refer to the column of the table on the lastrow
+          }
+					if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
+						data.row.cells[k].rowSpan=2;
+						data.row.cells[k].minWidth=15;
+						data.row.cells[k].styles.cellWidth=15;
+						k++;
+					}
+        }
+						});	
+						}
+						
+						
 
 doc.rect(30, 102, 70, 85, 'S');
 //doc.output('dataurlnewwindow');
