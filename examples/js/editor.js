@@ -359,6 +359,8 @@ var jsPDFEditor = function () {
 						doc.text("- Nếu có chi tiết sai, phải báo ngay cho trường THCS biết để điều chỉnh", cngang_ncc, cdoc_ncc, 0);
 						doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký", cngang_gnc, cdoc_gnc, 0);
 
+						
+						if(tinCot==1){
 						var k=14;
 						
 						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
@@ -388,7 +390,7 @@ var jsPDFEditor = function () {
 					}
         }
 						});
-						
+						}
 						
 						if(tinCot==0){
 							var m=13;
@@ -604,6 +606,8 @@ doc.setFontSize(7);
 doc.text("- Nếu có chi tiết sai, phải báo ngay cho trường THCS biết để điều chỉnh", cngang_ncc, cdoc_ncc, 0);
 doc.text("- giấy này có giá trị trong vòng 12 tháng kể từ ngày ký", cngang_gnc, cdoc_gnc, 0);
 
+						
+if(tinCot==1){
 var k=14;
 
 doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Tin','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,tin,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
@@ -633,7 +637,7 @@ k++;
 }
 }
 });
-
+}
 						
 if(tinCot==0){
 	var m=13;
