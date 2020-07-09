@@ -391,6 +391,7 @@ var jsPDFEditor = function () {
 						
 						
 						if(tinCot==0){
+							k=k-1;
 							doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 							       theme: 'plain',
 							startY: 200,
@@ -635,6 +636,7 @@ k++;
 
 						
 if(tinCot==0){
+	k=k-1;
 	doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 	       theme: 'plain',
 	startY: 200+cong,
