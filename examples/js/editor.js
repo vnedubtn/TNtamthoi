@@ -391,7 +391,7 @@ var jsPDFEditor = function () {
 						
 						
 						if(tinCot==0){
-							k=k-1;
+							var m=13;
 							doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 							       theme: 'plain',
 							startY: 200,
@@ -412,10 +412,10 @@ var jsPDFEditor = function () {
             //description above refer to the column of the table on the lastrow
           }
 					if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
-						data.row.cells[k].rowSpan=2;
-						data.row.cells[k].minWidth=15;
-						data.row.cells[k].styles.cellWidth=15;
-						k++;
+						data.row.cells[m].rowSpan=2;
+						data.row.cells[m].minWidth=15;
+						data.row.cells[m].styles.cellWidth=15;
+						m++;
 					}
         }
 						});	
@@ -636,7 +636,7 @@ k++;
 
 						
 if(tinCot==0){
-	k=k-1;
+	var m=13;
 	doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa','NN','GDCD','C.nghệ','TD','Nhạc','M.thuật']],body:[[toan,li,hoa,sinh,van,su,dia,anh,gdcd,cn,td,nhac,mt,tb,hl,hk,ut,kk,xl]],	
 	       theme: 'plain',
 	startY: 200+cong,
@@ -657,10 +657,10 @@ data.row.cells[0].colSpan=13;
 //description above refer to the column of the table on the lastrow
 }
 if((data.section=='head'&&data.cell.raw=='TB Năm')||(data.section=='head'&&data.cell.raw=='Học lực')||(data.section=='head'&&data.cell.raw=='Hạnh kiểm')||(data.section=='head'&&data.cell.raw=='Điểm UT')||(data.section=='head'&&data.cell.raw=='Điểm KK')||(data.section=='head'&&data.cell.raw=='Xếp loại TN')){
-data.row.cells[k].rowSpan=2;
-data.row.cells[k].minWidth=15;
-data.row.cells[k].styles.cellWidth=15;
-k++;
+data.row.cells[m].rowSpan=2;
+data.row.cells[m].minWidth=15;
+data.row.cells[m].styles.cellWidth=15;
+m++;
 }
 }
 });	
