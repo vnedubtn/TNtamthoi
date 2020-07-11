@@ -645,7 +645,7 @@ if(btCot==1){
 						
 						doc.autoTable({head:[['Kết quả các môn học lớp 9','TB Năm','Học lực','Hạnh kiểm','Điểm UT','Điểm KK','Xếp loại TN'],['Toán','Lí','Hóa','Sinh','Văn','Sử','Địa']],body:[[toan,li,hoa,sinh,van,su,dia,tb,hl,hk,ut,kk,xl]],	
 							       theme: 'plain',
-							startY: 200,
+							startY: 200+cong,
 							styles: { // Defaul style
 								lineWidth: 0.01,
 								lineColor: 0,
