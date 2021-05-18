@@ -83,7 +83,7 @@ var jsPDFEditor = function () {
 			var source = "";
 
 			source += "\n";
-			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2020';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2020';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\nvar cngang_nv2=250;\nvar quyetdinh='Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2006 của Bộ Giáo dục và Đào tạo';\nvar tinCot=1;\nvar btCot=0;\n";
+			source +="var truong='THCS Nguyễn Trãi';\nvar hieutruong='Nguyễn Minh Quốc';\nvar namhoc='2020';\nvar huyen='Bình Thuận';\nvar khoangay='25-05-2020';\nvar ban='Cơ bản';\nvar ubnd='UBND THÀNH PHỐ PHAN THIẾT';\nvar ngay='25';\nvar thang='05';\nvar nam='2021';\nvar cngang_htk=440;\nvar cngang_truong=50;\nvar cngang_bth=400;\nvar cngang_nv2=250;\nvar quyetdinh='Căn cứ quyết định số 11/2006/ QĐ-BGD&ĐT ngày 05/04/2006 của Bộ Giáo dục và Đào tạo';\nvar tinCot=1;\nvar btCot=0;\n";
 			// source += "var doc = new jsPDF({unit: \"pt\",orientation: \"p\",lineHeight: 1.2});\n";
 			// source += "\n";
 
@@ -346,7 +346,7 @@ var jsPDFEditor = function () {
 						doc.setFont("Times");
 						doc.setFontType("italic");
 						doc.setFontSize(10);
-						doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm "+namhoc, cngang_bth, cdoc_bth, 0);
+						doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm "+nam, cngang_bth, cdoc_bth, 0);
 						doc.setFont("Times");
 						doc.setFontType("bold");
 						doc.setFontSize(10);
@@ -626,7 +626,7 @@ doc.text("Nguyện vọng 2: "+nv2, cngang_nv2, cdoc_nv2, 0);
 doc.setFont("Times");
 doc.setFontType("italic");
 doc.setFontSize(10);
-doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm "+namhoc, cngang_bth, cdoc_bth, 0);
+doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm "+nam, cngang_bth, cdoc_bth, 0);
 doc.setFont("Times");
 doc.setFontType("bold");
 doc.setFontSize(10);
