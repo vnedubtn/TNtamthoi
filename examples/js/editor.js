@@ -626,7 +626,7 @@ doc.text("Nguyện vọng 2: "+nv2, cngang_nv2, cdoc_nv2, 0);
 doc.setFont("Times");
 doc.setFontType("italic");
 doc.setFontSize(10);
-doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm 2020", cngang_bth, cdoc_bth, 0);
+doc.text(huyen+", ngày "+ngay+" tháng "+thang+" năm "+namhoc, cngang_bth, cdoc_bth, 0);
 doc.setFont("Times");
 doc.setFontType("bold");
 doc.setFontSize(10);
